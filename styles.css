@@ -1,0 +1,71 @@
+:root {
+  --bg: #0b0d10;
+  --panel: #11151a;
+  --muted: #8b949e;
+  --text: #e6edf3;
+  --accent: #3b82f6;
+  --border: #22303c;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.site-header {
+  max-width: 1100px;
+  margin: 32px auto 16px;
+  padding: 0 16px;
+}
+.site-header h1 { margin: 0 0 8px; font-size: 28px; }
+.subtitle { margin: 0 0 12px; color: var(--muted); }
+.controls { display: flex; align-items: center; gap: 12px; }
+#filter {
+  flex: 1;
+  max-width: 420px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+.hint { margin-top: 8px; }
+.hint summary { cursor: pointer; color: var(--accent); }
+.hint-body { padding: 8px 0 0; color: var(--muted); }
+pre { background: var(--panel); padding: 8px; border-radius: 8px; border: 1px solid var(--border); overflow: auto; }
+
+main { max-width: 1100px; margin: 8px auto 32px; padding: 0 16px; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+.thumb-link { display: block; background: #0a0a0a; }
+.thumb { width: 100%; height: 180px; object-fit: cover; display: block; }
+.meta { padding: 10px; display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+.name { font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.actions { display: flex; gap: 8px; }
+.copy-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.site-footer { max-width: 1100px; margin: 0 auto 24px; padding: 0 16px; }
+
+@media (prefers-color-scheme: light) {
+  :root { --bg: #f7f9fb; --panel: #ffffff; --text: #0b0d10; --muted: #606770; --border: #e5e7eb; --accent: #2563eb; }
+}
